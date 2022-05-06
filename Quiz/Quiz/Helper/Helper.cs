@@ -13,8 +13,10 @@ namespace Quiz.Helper
         {
             string result = "";
             if (numberPage > 0)
-            {
-                result += "<a class=\"page-item pagination-prev disabled\" onclick=\"NextPage(" + (currentPage - 1) + ")\" href=\"javascript: void(0);\">Previous</a>";
+            {   if (currentPage != 1)
+                {
+                    result += "<a class=\"page-item pagination-prev disabled\" onclick=\"NextPage(" + (currentPage - 1) + ")\" href=\"javascript: void(0);\">Previous</a>";
+                }
                 result += "<ul class=\"pagination listjs-pagination mb-0\">";
                 for (int i = 1; i <= numberPage; i++)
                 {
